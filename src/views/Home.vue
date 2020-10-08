@@ -1,18 +1,32 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <Lottie :options="LoveHand" :height="150" :width="200" :animCreated="handleAnimation" />
+    <Title msg="Welcome to Chomeko Design`s" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import Title from "../components/Title";
+import Lottie from "../components/Lottie";
+// アニメーション
+import * as loveHand from "../assets/love-hand.json";
 
 export default {
   name: "Home",
   components: {
-    HelloWorld
+    Title,
+    Lottie,
+  },
+  computed: {
+    LoveHand() {
+      return { animationData: loveHand, loop: true };
+    }
+  },
+  methods: {
+    handleAnimation(anim) {
+      this.anim = anim;
+    }
   }
 };
 </script>
