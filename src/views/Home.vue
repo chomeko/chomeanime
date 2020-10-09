@@ -7,6 +7,14 @@
       :animCreated="handleAnimation"
     />
     <Title :msg="state.message" />
+
+    <div class="myMessage">
+      <p>このサイトはvue初学者の僕が、Illustrator AfterEffect Lottieを
+        使ったデザインを投稿するサイトである。<br>
+        あなたがLottieを使えるのならば、使ってくれてかまわない。
+        気に入ったデザインがあれば気軽に言ってほしい。
+      </p>
+    </div>
   </div>
 </template>
 
@@ -42,8 +50,23 @@ export default {
     return {
       state,
       handleAnimation,
-      LoveHand
+      LoveHand,
     };
   }
 };
 </script>
+
+<style lang="sass" scoped>
+$breakpoints: ('sp': 'screen and (min-width: 400px)','pc': 'screen and (min-width: 768px)')
+=mq($breakpoint: sp)
+  @media #{map-get($breakpoints, $breakpoint)}
+    @content
+
+.home
+  padding: 30px
+.myMessage
+  line-height: 2
+  font-size: 12px
+  +mq(pc)
+    font-size: 14px
+</style>
