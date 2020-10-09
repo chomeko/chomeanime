@@ -8,12 +8,12 @@
 </template>
 
 <script>
-import Header from './components/Header'
+import Header from "./components/Header";
 export default {
   components: {
     Header
   }
-}
+};
 </script>
 
 <style lang="sass">
@@ -30,5 +30,4 @@ export default {
 .fade-enter-active,
 .fade-leave-active
   transition: opacity 1s
-
 </style>
