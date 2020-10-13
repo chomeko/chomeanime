@@ -5,12 +5,6 @@
   </div>
 </template>
 
-<script>
-export default {
-
-}
-</script>
-
 <style lang="sass" scoped>
 #header
   padding: 30px
@@ -22,5 +16,4 @@ export default {
     &.router-link-exact-active
       color: #fb1967
       font-size: 20px
-
 </style>

@@ -9,8 +9,9 @@
     <Title :msg="state.message" />
 
     <div class="myMessage">
-      <p>このサイトはvue初学者の僕が、Illustrator AfterEffect Lottieを
-        使ったデザインを投稿するサイトである。<br>
+      <p>
+        このサイトはvue初学者の僕が、Illustrator AfterEffect Lottieを
+        使ったデザインを投稿するサイトである。<br />
         あなたがLottieを使えるのならば、使ってくれてかまわない。
         気に入ったデザインがあれば気軽に言ってほしい。
       </p>
@@ -35,7 +36,7 @@ export default {
   setup() {
     const state = reactive({
       message: "Welcome to Chomeko Design`s",
-      anim: ""
+      anim: null
     });
 
     const handleAnimation = anim => {
@@ -50,7 +51,7 @@ export default {
     return {
       state,
       handleAnimation,
-      LoveHand,
+      LoveHand
     };
   }
 };

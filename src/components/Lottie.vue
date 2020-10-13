@@ -15,9 +15,8 @@ export default {
     height: Number,
     width: Number
   },
-  setup(props, context) {
+  setup(props,context) {
     const state = reactive({
-      anim: "",
       style: {
         width: props.width ? `${props.width}px` : "100%",
         height: props.height ? `${props.height}px` : "100%",
@@ -29,15 +28,15 @@ export default {
     const lavContainer = ref(null);
 
     onMounted(() => {
-      state.anim = lottie.loadAnimation({
+      const LottieAnim = lottie.loadAnimation({
         container: lavContainer.value,
         renderer: "svg",
         loop: props.options.loop,
         autoplay: props.options.autoplay !== false,
         animationData: props.options.animationData.default,
-        rendererSettings: props.options.rendererSettings
+        rendererSettings: props.options.rendererSettings,
       });
-      context.emit("animcreated", state.anim);
+      context.emit('anim-created', LottieAnim)
     });
 
     return {

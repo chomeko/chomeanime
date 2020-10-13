@@ -1,20 +1,24 @@
 <template>
-  <div class="footer">
+  <div id="footer">
     <dl>
       <dt>ちょめこ</dt>
-      <dd><a href="https://twitter.com/chomeko3o" rel="noopener" target="_blank">Twitter</a></dd>
+      <dd>
+        <a href="https://twitter.com/chomeko3o" rel="noopener" target="_blank">
+          Twitter
+        </a>
+      </dd>
     </dl>
     <Lottie
-    :options="Twitter"
-    :height="100"
-    :width="100"
-    :animCreated="handleAnimation"
-  />
+      :options="Twitter"
+      :height="100"
+      :width="100"
+      :animCreated="handleAnimation"
+    />
   </div>
 </template>
 
 <script>
-import { reactive, computed } from "vue";
+import { computed } from "vue";
 import Lottie from "../components/Lottie";
 // アニメーション
 import * as twitter from "../assets/twitte.json";
@@ -24,12 +28,8 @@ export default {
     Lottie
   },
   setup() {
-    const state = reactive({
-      anim: ""
-    });
-
     const handleAnimation = anim => {
-      state.anim = anim;
+      this.anim = anim;
     };
 
     const Twitter = computed(() => ({
@@ -38,7 +38,6 @@ export default {
     }));
 
     return {
-      state,
       handleAnimation,
       Twitter
     };
@@ -47,7 +46,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-.footer
+#footer
   dl
     display: flex
     justify-content: center
