@@ -20,6 +20,10 @@ export default {
 </script>
 
 <style lang="sass">
+
+body
+  background: #f2f3f7
+
 #app
   font-family: Avenir, Helvetica, Arial, sans-serif
   -webkit-font-smoothing: antialiased
